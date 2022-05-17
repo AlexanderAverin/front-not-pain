@@ -16,3 +16,8 @@ jobs:
       - run: sudo apt update && sudo apt install graphicsmagick
       - run: npm install
       - run: npm run build
+      - name: upload builded page
+        uses: actions/upload-artifact@v3
+          with:
+            name: page
+            path: build/index.html
